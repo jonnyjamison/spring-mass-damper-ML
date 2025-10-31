@@ -2,6 +2,8 @@ import os
 import pytest
 from fastapi.testclient import TestClient
 from src.spring_mass_damper_ML.api.main import app
+import warnings
+warnings.filterwarnings("ignore", category=DeprecationWarning)
 
 
 @pytest.fixture(scope="session")
