@@ -1,0 +1,30 @@
+name: ci
+
+on:
+    push:
+        branches: [ main ]
+    pull_request:
+        branches: [ main ]
+
+
+jobs:
+    build-test:
+        runs-on: ubuntu-latest
+        steps:
+        - uses: actions/checkout@v4
+        - uses: actions/setup-python@v5
+            with:
+                python-version: '3.11'
+        - name: Install Poetry
+          run: curl -sSL https://install.python-poetry.org | python3 -
+        - name: Add Poetry to PATH
+          run: echo "$HOME/.local/bin" >> $GITHUB_PATH
+        - name: Install deps
+           run: |
+            poetry install
+        - name: Lint
+            run: poetry run ruff check .
+        - name: Tests
+            run: poetry run pytest -q
+        - name: Build Docker
+            run: docker build -t physicsx-surrogate:ci .

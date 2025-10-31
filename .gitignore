@@ -1,0 +1,15 @@
+__pycache__/
+.mlruns/
+mlruns/
+*.pyc
+*.pyo
+*.pyd
+*.DS_Store
+.env
+.venv/
+.poetry/
+.poetry_cache/
+.idea/
+.vscode/
+*.log
+**/__pycache__/

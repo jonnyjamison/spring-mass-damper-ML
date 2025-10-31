@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  api:
+    build: .
+    image: spring-mass-damper-ml:latest
+    container_name: spring-mass-damper-api
+    ports:
+      - "8080:8080"
+    environment:
+      MODEL_PATH: /app/model_registry/v1/model.pt
+    restart: unless-stopped
