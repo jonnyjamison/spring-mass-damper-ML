@@ -1,7 +1,7 @@
-# Spring–Mass–Damper ML Surrogate
+# Spring–Mass–Damper Machine Learning Model
 
-This project builds a small, production-style machine learning system that learns a **surrogate model** of a damped spring–mass–damper system.  
-It includes training a neural network in PyTorch, serving predictions through a FastAPI app, and running everything inside Docker.
+This project builds a small, production-style machine learning system that learns the physics of a damped spring–mass–damper system.  
+It includes training a neural network using PyTorch, serving predictions through a FastAPI app, and containerisation using Docker.
 
 ---
 
